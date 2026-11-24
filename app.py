@@ -9,10 +9,10 @@ st.set_page_config(
     layout="wide"
 )
 
-# 2. 데이터 로드 (캐싱 적용)
+# 2. 데이터 로드 (CSV 파일 직접 읽기)
 @st.cache_data
 def load_data():
-    df = sns.load_dataset('titanic')
+    df = pd.read_csv('titanic.csv')
     return df
 
 df = load_data()
